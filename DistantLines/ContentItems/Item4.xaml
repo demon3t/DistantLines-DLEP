@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="WpfApp.ContentItems.Item4"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp.ContentItems"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <ScrollViewer>
+        <Grid Margin="0,0,10,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Волновое сопротивление-->
+            <Grid Grid.Row="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Button Content="Зависимость волнового сопротивления линии от количества реакторов" Grid.Row="0"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonPrimary}"
+                        Click="DataClick"/>
+
+                <WpfPlot x:Name="PlotR" Grid.Row="1"
+                         SizeChanged="PlotSizeChanged"/>
+
+            </Grid>
+
+            <!--Натуральная мощность-->
+            <Grid Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Button Content="Зависимость натуральной мощности линии от количества реакторов" Grid.Row="0"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonPrimary}"
+                        Click="DataClick"/>
+
+                <WpfPlot x:Name="PlotPower" Grid.Row="1"
+                     SizeChanged="PlotSizeChanged"/>
+
+            </Grid>
+            
+            <!--Угол-->
+            <Grid Grid.Row="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Button Content="Зависимость угла от количества реакторов" Grid.Row="0"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonPrimary}"
+                        Click="DataClick"/>
+
+                <WpfPlot x:Name="PlotAlpha" Grid.Row="1"
+                     SizeChanged="PlotSizeChanged"/>
+
+            </Grid>
+
+            <Grid Grid.Row="3">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Постоянная А-->
+                <Grid Grid.Column="0" Margin="0,0,1,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button Content="Зависимость постоянной А линии от количества реакторов" Grid.Row="0"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonPrimary}"
+                            Click="DataClick"/>
+
+                    <WpfPlot x:Name="PlotA" Grid.Row="1"
+                     SizeChanged="PlotSizeChanged"/>
+
+                </Grid>
+
+                <!--Постоянная B-->
+                <Grid Grid.Column="1" Margin="1,0,0,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button Content="Зависимость постоянной B линии от количества реакторов" Grid.Row="0"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonPrimary}"
+                            Click="DataClick"/>
+
+                    <WpfPlot x:Name="PlotB" Grid.Row="1"
+                     SizeChanged="PlotSizeChanged"/>
+
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="4">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Постоянная C-->
+                <Grid Grid.Column="0" Margin="0,0,1,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button Content="Зависимость постоянной C линии от количества реакторов" Grid.Row="0"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonPrimary}"
+                            Click="DataClick"/>
+
+                    <WpfPlot x:Name="PlotC" Grid.Row="1"
+                     SizeChanged="PlotSizeChanged"/>
+
+                </Grid>
+
+                <!--Постоянная D-->
+                <Grid Grid.Column="1" Margin="1,0,0,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button Content="Зависимость постоянной D линии от количества реакторов" Grid.Row="0"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource ButtonPrimary}"
+                            Click="DataClick"/>
+
+
+                    <WpfPlot x:Name="PlotD" Grid.Row="1"
+                     SizeChanged="PlotSizeChanged"/>
+
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+    </ScrollViewer>
+
+</UserControl>

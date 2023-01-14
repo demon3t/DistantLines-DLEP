@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="WpfApp.Controls.DataGridModel"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp.Classes"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Width="800"
+             hc:Dialog.Token="DialogContainer">
+
+    <hc:DialogContainer>
+
+        <Border CornerRadius="5" Style="{StaticResource BorderRegion}">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Значения графиков" Grid.Row="0"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource LabelPrimary}"/>
+
+                <Button Width="30" Height="30" Grid.Column="0" Command="hc:ControlCommands.Close" Style="{StaticResource ButtonIcon}"
+                                Foreground="{DynamicResource DarkDefaultBrush}" hc:IconElement.Geometry="{StaticResource RemoveGeometry}"
+                                HorizontalAlignment="Right" VerticalAlignment="Top"/>
+
+                <DataGrid x:Name="Table" Grid.Row="1"
+                          AutoGenerateColumns="False" CanUserAddRows="False" CanUserReorderColumns="False"
+                          CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False"
+                          CanUserDeleteRows="False"/>
+
+            </Grid>
+        </Border>
+
+    </hc:DialogContainer>
+
+</UserControl>

@@ -1,0 +1,272 @@
+﻿<Window x:Class="DistantLines.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:cc="clr-namespace:WpfApp.Controls"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="MainWindow"
+        MinHeight="500" MinWidth="820"
+        Height="500" Width="820"
+        Icon="C:\Users\Nipa\source\repos\ВДУЗ\WpfApp\Resources\icon.ico">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" MaxWidth="500"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Исходные данные-->
+            <Expander Header="Исходные данные" Grid.Row="0" Margin="2,2,0,2" IsExpanded="True" Foreground="{DynamicResource TextIconBrush}"
+                      Background="{DynamicResource PrimaryBrush}" BorderBrush="{DynamicResource DarkPrimaryBrush}">
+
+                <Border BorderThickness="1,0,1,1" CornerRadius="0,0,4,4"
+                        BorderBrush="{DynamicResource BorderBrush}" Background="{DynamicResource RegionBrush}">
+                    <Grid Height="Auto">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!--Напряжение-->
+                        <Border CornerRadius="4" Background="{DynamicResource DarkDefaultBrush}"
+                                Grid.Row="0">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Напряжение, кВ"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding VoltNom}" Maximum="2500"
+                                                  Background="{DynamicResource DarkDefaultBrush}" Minimum="0"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--Длина линии-->
+                        <Border CornerRadius="4"
+                                Grid.Row="1">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Длина линии, км"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding Length}"
+                                                  Minimum="0" Maximum="100000"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--Расщеплённых проводов-->
+                        <Border CornerRadius="4" Background="{DynamicResource DarkDefaultBrush}"
+                                Grid.Row="2">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Расщеплённых проводов"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding N_split}"
+                                              Background="{DynamicResource DarkDefaultBrush}" Minimum="1"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--Сечение стали-->
+                        <Border CornerRadius="4"
+                                Grid.Row="3">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Сечение стали, мм²"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding F_st}" Minimum="0"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--Сечение алюминия-->
+                        <Border CornerRadius="4" Background="{DynamicResource DarkDefaultBrush}"
+                                Grid.Row="4">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Сечение алюминия, мм²"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding F_al}"
+                                              Background="{DynamicResource DarkDefaultBrush}" Minimum="0"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--Диаметр провода-->
+                        <Border CornerRadius="4"
+                                Grid.Row="5">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Диаметр провода, мм"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding D_wire}" Minimum="0" Increment="0.1"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--Активное сопротивление-->
+                        <Border CornerRadius="4" Background="{DynamicResource DarkDefaultBrush}"
+                                Grid.Row="6">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Активное сопротивление, Ом/км"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding R0}" Increment="0.001"
+                                              Background="{DynamicResource DarkDefaultBrush}" Minimum="0"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--Расстояние между фазами-->
+                        <Border CornerRadius="4"
+                                Grid.Row="7">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Расстояние между фазами, м"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding D_phase}" Minimum="0" Increment="0.1"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--Расстояние между расщеплёнными проводами-->
+                        <Border CornerRadius="4" Background="{DynamicResource DarkDefaultBrush}"
+                                Grid.Row="8">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Расстояние между расщеплёнными проводами, см"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding A_splitwires}"
+                                              Background="{DynamicResource DarkDefaultBrush}" Minimum="0"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--K1-->
+                        <Border CornerRadius="4"
+                                Grid.Row="9">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="K1"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding K1}" Increment="0.01" Maximum="1" Minimum="0"/>
+
+                            </Grid>
+                        </Border>
+
+                        <!--K2-->
+                        <Border CornerRadius="4" Background="{DynamicResource DarkDefaultBrush}"
+                                Grid.Row="10">
+                            <Grid Height="34">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="K2"  Grid.Column="0" Style="{StaticResource BaseStyle}"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                                <hc:NumericUpDown Grid.Column="1" Margin="2" Value="{Binding K2}" Increment="0.01" Minimum="1"
+                                                  Background="{DynamicResource DarkDefaultBrush}"/>
+
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+            </Expander>
+
+
+
+        </Grid>
+
+        <TabControl x:Name="ContentViewer" Grid.Column="1" Margin="2"
+                        BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1"/>
+
+
+    </Grid>
+</Window>
+
